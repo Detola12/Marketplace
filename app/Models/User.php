@@ -51,6 +51,11 @@ class User extends Authenticatable implements HasTenants
         ];
     }
 
+    public function vendors()
+    {
+        return $this->belongsToMany(Vendor::class, 'vendor_users');
+    }
+
     public function teams(): BelongsToMany
     {
         return $this->belongsToMany(Team::class);
@@ -58,11 +63,12 @@ class User extends Authenticatable implements HasTenants
 
     public function getTenants(Panel $panel): Collection
     {
-        return $this->teams;
+        return $this->vendors;
     }
 
     public function canAccessTenant(Model $tenant): bool
     {
-        return $this->teams()->whereKey($tenant)->exists();
+        return $this->vendors()->whereKey($tenant)->exists();
     }
+
 }
