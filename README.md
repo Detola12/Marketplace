@@ -42,13 +42,11 @@ This multi-vendor marketplace allows entrepreneurs and businesses to create thei
 ## 🏗️ Technical Architecture
 
 ### Tech Stack
-- **Framework**: Laravel 11.x
-- **Admin Panel**: Filament 3.x
-- **Database**: MySQL/PostgreSQL
+- **Framework**: Laravel 12
+- **Admin Panel**: Filament 4
+- **Database**: MySQL
 - **Authentication**: Laravel Breeze/Sanctum
 - **File Storage**: Laravel Storage (local/S3)
-- **Queue System**: Redis/Database queues
-- **Cache**: Redis/Memcached
 
 ### Multi-Tenancy Model
 The platform implements a **shared database, multi-tenancy architecture** where:
